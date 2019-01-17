@@ -4,7 +4,10 @@
   "description": "Start and stop heroku dynos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./start.js",
+    "stop": "node ./stop.js",
+    "size": "node ./size.js"
   },
   "repository": {
     "type": "git",
