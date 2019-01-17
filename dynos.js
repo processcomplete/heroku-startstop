@@ -41,8 +41,23 @@ const start = (names) => {
   return Promise.all(names.map(scaleToOne))
 }
 
+const size = (names, size) => {
+  const resize = name => {
+    log(`Resizing ${name}`)
+    return heroku.patch(`/apps/${name}/formation`, {
+      body: {
+        updates: [
+          { size, type: 'web' }
+        ]
+      }
+    })
+  }
+  return Promise.all(names.map(resize))
+}
+
 module.exports = {
   stop,
   start,
+  size,
   maintenance
 }
