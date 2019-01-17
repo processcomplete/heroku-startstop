@@ -1,0 +1,24 @@
+{
+  "name": "heroku-startstop",
+  "version": "1.0.0",
+  "description": "Start and stop heroku dynos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/processcomplete/heroku-startstop.git"
+  },
+  "keywords": [
+    "heroku",
+    "dyno",
+    "schedule"
+  ],
+  "author": "Phil Mellor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/processcomplete/heroku-startstop/issues"
+  },
+  "homepage": "https://github.com/processcomplete/heroku-startstop#readme"
+}
