@@ -55,9 +55,31 @@ const size = (names, size) => {
   return Promise.all(names.map(resize))
 }
 
+const config = (names) => {
+  return new Promise((resolve, reject) => {
+    const get = name => heroku.get(`/apps/${name}/config-vars`)
+
+    if (!Array.isArray(names)) {
+      names = [names]
+    }
+
+    return Promise.all(names.map(get)).then(
+      results => {
+        const hash = results.reduce((hash, result, index) => {
+          hash[names[index]] = result
+          return hash
+        }, {})
+        resolve(hash)
+      },
+      reject
+    )
+  })
+}
+
 module.exports = {
   stop,
   start,
   size,
-  maintenance
+  maintenance,
+  config
 }

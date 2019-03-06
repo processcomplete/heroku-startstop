@@ -1,4 +1,4 @@
-const dynos = require('./dynos')
+const dynos = require('./heroku')
 const log = require("debug")("size:log")
 
 const size = process.argv[2]
