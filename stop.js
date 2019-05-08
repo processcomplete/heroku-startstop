@@ -1,4 +1,4 @@
-const dynos = require('./dynos')
+const dynos = require('./heroku')
 const log = require("debug")("stop:log")
 
 const names = process.argv.splice(2)
